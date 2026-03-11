@@ -69,7 +69,7 @@ A high-performance WebGL simulation platform for creative computational artists.
 1.  **Clone the repository:**
     ```bash
     git clone https://github.com/mualat/particle-architect.git
-    cd ai-particle-architect
+    cd particle-architect
     ```
 
 2.  **Install dependencies:**
