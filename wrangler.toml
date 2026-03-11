@@ -1,0 +1,28 @@
+name = "particle-architect"
+compatibility_date = "2024-01-01"
+
+# Cloudflare Pages configuration
+pages_build_output_dir = "dist"
+
+# D1 Database binding
+[[d1_databases]]
+binding = "DB"
+database_name = "particles"
+database_id = "YOUR_DATABASE_ID"
+
+# Environment variables
+[vars]
+TURNSTILE_SECRET_KEY = ""
+
+# Production environment
+[env.production.vars]
+TURNSTILE_SECRET_KEY = ""
+
+# Staging environment  
+[env.staging.vars]
+TURNSTILE_SECRET_KEY = ""
+
+[observability]
+[observability.logs]
+enabled = true
+invocation_logs = true

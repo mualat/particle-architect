@@ -1,0 +1,25 @@
+{
+    "name": "Particle Architect",
+    "short_name": "particle-architect",
+    "description": "A high-performance WebGL simulation platform for creative computational artists. Generate, save, and publish massive 3D particle swarms using neural navigation and custom AI logic.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#000000",
+    "theme_color": "#000000",
+    "lang": "en",
+    "scope": "/",
+    "orientation": "any",
+    "icons": [
+        {
+            "src": "/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}

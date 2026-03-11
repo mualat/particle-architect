@@ -1,0 +1,205 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --accent: #00ff88;
+  --bg: #000000;
+  --panel: rgba(12, 12, 12, 0.95);
+  --border: rgba(255, 255, 255, 0.15);
+  --hud-bg: rgba(0, 20, 10, 0.9);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--bg);
+  font-family: 'Segoe UI', Roboto, Helvetica, sans-serif;
+  color: white;
+  touch-action: none;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+/* Custom Scrollbar */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--accent);
+  box-shadow: 0 0 10px var(--accent);
+  border: 0;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Range Input Styling */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  background: var(--accent);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  background: var(--accent);
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+}
+
+/* Color Input Styling */
+input[type="color"] {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  cursor: pointer;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+  border: none;
+  border-radius: 50%;
+}
+
+/* Animations */
+@keyframes slideInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in-up {
+  animation: slideInUp 0.3s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.3s ease-out;
+}
+
+.animate-slide-in-down {
+  animation: slideInDown 0.2s ease-out;
+}
+
+/* Focus styles */
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Selection */
+::selection {
+  background: var(--accent);
+  color: black;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+  
+  /* Prevent text selection on UI elements */
+  button, .no-select {
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  
+  /* Smooth scrolling for sidebar */
+  .scrollbar-thin {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Prevent pull-to-refresh on mobile */
+body {
+  overscroll-behavior: none;
+}
+
+/* Touch action for canvas */
+canvas {
+  touch-action: none;
+}
